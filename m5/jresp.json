@@ -1,0 +1,5333 @@
+{
+  "rpc-reply": {
+    "@message-id": "urn:uuid:318786de-093e-4852-b8d8-2681c775c94e",
+    "@xmlns": "urn:ietf:params:xml:ns:netconf:base:1.0",
+    "data": {
+      "interfaces": {
+        "@xmlns": "http://openconfig.net/yang/interfaces",
+        "interface": [
+          {
+            "config": {
+              "enabled": "false",
+              "mtu": "1500",
+              "name": "vlan1",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan1",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "1"
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "prod svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan101",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan101",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "101"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.101.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.101.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "iot svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan105",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan105",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "105"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.105.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.105.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "security svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan104",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan104",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "104"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.104.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.104.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "mgmt svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan100",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan100",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "100"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.100.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.100.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "test svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan103",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan103",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "103"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.103.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.103.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "dev svi - DEMO PLEASE DON'T TOUCH",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "vlan102",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:l2vlan"
+              }
+            },
+            "name": "vlan102",
+            "routed-vlan": {
+              "@xmlns": "http://openconfig.net/yang/vlan",
+              "config": {
+                "vlan": "102"
+              },
+              "ipv4": {
+                "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                "addresses": {
+                  "address": {
+                    "config": {
+                      "ip": "172.16.102.1",
+                      "prefix-length": "24"
+                    },
+                    "ip": "172.16.102.1"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "name": "lo1",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:softwareLoopback"
+              }
+            },
+            "name": "lo1",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0",
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "config": {
+                        "ip": "172.16.0.1",
+                        "prefix-length": "32"
+                      },
+                      "ip": "172.16.0.1"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/71",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/71",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/124",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/124",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/112",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/112",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/67",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/67",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/79",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/79",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/33",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/33",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/43",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/43",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/4",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/4",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/99",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/99",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/84",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/84",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/109",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/109",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/17",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/17",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/10",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/10",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/108",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/108",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/89",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/89",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/73",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/73",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/106",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/106",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/32",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/32",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/22",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/22",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/61",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/61",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/30",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/30",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/116",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/116",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/54",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/54",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/119",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/119",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/111",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/111",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/92",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/92",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/78",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/78",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/50",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/50",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/115",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/115",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/72",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/72",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/6",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/6",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/38",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/38",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/65",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/65",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "L3 Link",
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/5",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/5",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0",
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "config": {
+                        "ip": "172.16.1.1",
+                        "prefix-length": "30"
+                      },
+                      "ip": "172.16.1.1"
+                    }
+                  }
+                }
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/97",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/97",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/36",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/36",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/120",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/120",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/100",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/100",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/90",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/90",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/81",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/81",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/31",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/31",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/28",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/28",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/93",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/93",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/2",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/2",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true",
+                "aggregate-id": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/aggregate",
+                  "#text": "po11"
+                }
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "TRUNK",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/66",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/66",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/105",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/105",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/58",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/58",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/88",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/88",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/94",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/94",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/104",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/104",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/87",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/87",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/62",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/62",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/37",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/37",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/77",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/77",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/46",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/46",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/40",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/40",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/101",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/101",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/125",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/125",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/123",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/123",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/118",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/118",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/7",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/7",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/12",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/12",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/60",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/60",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/56",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/56",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/63",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/63",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/110",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/110",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/14",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/14",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/23",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/23",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/41",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/41",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/19",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/19",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/103",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/103",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/15",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/15",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/80",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/80",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/113",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/113",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/35",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/35",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/86",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/86",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/96",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/96",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/70",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/70",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/18",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/18",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/98",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/98",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/95",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/95",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/82",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/82",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/59",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/59",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/13",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/13",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/9",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/9",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/27",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/27",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/49",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/49",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/44",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/44",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/16",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/16",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/76",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/76",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/51",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/51",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/11",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/11",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/39",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/39",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/83",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/83",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/107",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/107",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/57",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/57",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/1",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/1",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true",
+                "aggregate-id": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/aggregate",
+                  "#text": "po11"
+                }
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "TRUNK",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/126",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/126",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/47",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/47",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/85",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/85",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/45",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/45",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/24",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/24",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/55",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/55",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/42",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/42",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/25",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/25",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/26",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/26",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/91",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/91",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/114",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/114",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/20",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/20",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/69",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/69",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/68",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/68",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/48",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/48",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/121",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/121",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/21",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/21",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/34",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/34",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/53",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/53",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/3",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/3",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/74",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/74",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/122",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/122",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/102",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/102",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/8",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/8",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/64",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/64",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/75",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/75",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/52",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/52",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/127",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/127",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/29",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/29",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/128",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/128",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "eth1/117",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "hold-time": {
+              "config": {
+                "down": "100"
+              }
+            },
+            "name": "eth1/117",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "ethernet": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+              "config": {
+                "auto-negotiate": "true"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "ACCESS",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": null,
+              "enabled": "true",
+              "mtu": "1500",
+              "name": "po11",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ieee8023adLag"
+              }
+            },
+            "name": "po11",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0"
+              }
+            },
+            "aggregation": {
+              "@xmlns": "http://openconfig.net/yang/interfaces/aggregate",
+              "config": {
+                "lag-type": "STATIC",
+                "min-links": "1"
+              },
+              "switched-vlan": {
+                "@xmlns": "http://openconfig.net/yang/vlan",
+                "config": {
+                  "access-vlan": "1",
+                  "interface-mode": "TRUNK",
+                  "native-vlan": "1"
+                }
+              }
+            }
+          },
+          {
+            "config": {
+              "description": "DO NOT TOUCH CONFIG ON THIS INTERFACE",
+              "enabled": "true",
+              "name": "mgmt0",
+              "type": {
+                "@xmlns:ianaift": "urn:ietf:params:xml:ns:yang:iana-if-type",
+                "#text": "ianaift:ethernetCsmacd"
+              }
+            },
+            "name": "mgmt0",
+            "subinterfaces": {
+              "subinterface": {
+                "config": {
+                  "index": "0"
+                },
+                "index": "0",
+                "ipv4": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "addresses": {
+                    "address": {
+                      "config": {
+                        "ip": "10.10.20.95",
+                        "prefix-length": "24"
+                      },
+                      "ip": "10.10.20.95"
+                    }
+                  }
+                },
+                "ipv6": {
+                  "@xmlns": "http://openconfig.net/yang/interfaces/ip",
+                  "config": {
+                    "dup-addr-detect-transmits": "1"
+                  },
+                  "autoconf": {
+                    "@xmlns": "http://openconfig.net/yang/interfaces/ip-ext",
+                    "config": {
+                      "create-global-addresses": "false"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
