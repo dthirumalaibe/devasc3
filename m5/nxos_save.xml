@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<nf:rpc xmlns:nf="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns="http://www.cisco.com/nxos:9.2.1.:nxos_operations" message-id="1">
+  <exec-command>
+    <cmd>copy running-config startup-config</cmd>
+  </exec-command>
+</nf:rpc>
