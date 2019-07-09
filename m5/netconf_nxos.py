@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+
+"""
+Author: Nick Russo
+Purpose: Using NETCONF with Openconfig YANG models to manage Ethernet
+VLANs on a Cisco NX-OS switch via the always-on Cisco DevNet sandbox.
+"""
+
+
 from ncclient import manager
 import xmltodict
 import json
