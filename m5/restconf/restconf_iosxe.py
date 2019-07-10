@@ -31,6 +31,7 @@ def main():
     dhcp_target = "data/Cisco-IOS-XE-native:native/ip/dhcp"
 
     # Create 2-tuple for "basic" authentication using Cisco DevNet credentials.
+    # No fancy tokens necessary to get basic RESTCONF working on Cisco IOS-XE!
     auth = ("root", "D_Vay!_10&")
 
     # Define headers for issuing HTTP GET requests to receive YANG data as JSON.
@@ -45,12 +46,16 @@ def main():
         verify=False,
     )
 
-    # If the request succeed with a 220 "OK" message and there is
+    # Uncomment the line below to see the JSON response; great for learning
+    print(json.dumps(get_dhcp_response.json(), indent=4))
+
+    # If the request succeed with a 200 "OK" message and there is
     # some text defined, then step through the JSON and extract the useful
     # bits of information. This is a good exercise to work on accessing data
-    # from complex JSON structured.
+    # from complex JSON structure.
     if get_dhcp_response.status_code == 200 and get_dhcp_response.text:
         dhcp_pools = get_dhcp_response.json()["Cisco-IOS-XE-dhcp:pool"]
+
         for pool in dhcp_pools:
             print(f"ID: {pool['id']}")
             print(f"  Domain: {pool['domain-name']}")
@@ -76,11 +81,11 @@ def main():
     add_pool = {
         "Cisco-IOS-XE-dhcp:pool": [
             {
-                "id": "NICKTEST",
-                "default-router": {"default-router-list": ["192.0.2.254"]},
+                "id": "test3",
+                "default-router": {"default-router-list": ["198.51.100.44"]},
                 "dns-server": {"dns-server-list": ["8.8.4.4", "8.8.8.8"]},
                 "domain-name": "njrusmc.net",
-                "network": {"number": "192.0.2.0", "mask": "255.255.255.0"},
+                "network": {"number": "198.51.100.0", "mask": "255.255.255.0"},
             }
         ]
     }
@@ -100,11 +105,15 @@ def main():
         verify=False,
     )
 
+    # Uncomment the line below to see the JSON response; great for learning
+    # print(json.dumps(post_dhcp_response.json(), indent=4))
+
     # HTTP 201 means "created", implying a new resource was added. The
     # response will tell us the URL of the newly-created resource, simplifying
     # future removal.
     if post_dhcp_response.status_code == 201:
         print(f"Added DHCP pool at: {post_dhcp_response.headers['Location']}")
+        print(json.dumps(add_pool, indent=4))
 
         # Save configuration whenever the DHCP pool is added. This ensures
         # the configuration will persist across reboots.

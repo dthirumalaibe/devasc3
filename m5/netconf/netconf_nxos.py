@@ -8,6 +8,7 @@ VLANs on a Cisco NX-OS switch via the always-on Cisco DevNet sandbox.
 
 
 import xmltodict
+from lxml.etree import fromstring
 from ncclient import manager
 
 
@@ -16,6 +17,9 @@ def main():
     Execution begins here.
     """
 
+    # Dictionary containing keyword arguments (kwargs) for connecting
+    # via NETCONF. Because SSH is the underlying transport, there are
+    # several minor options to set up.
     connect_params = {
         "host": "sbx-nxos-mgmt.cisco.com",
         "port": 10000,
@@ -27,12 +31,14 @@ def main():
         "device_params": {"name": "nexus"},
     }
 
+    # Unpack the connect_params dict and use them to connect inside
+    # of a "with" context manager. The variable "conn" represents the
+    # NETCONF connection to the device.
     with manager.connect(**connect_params) as conn:
         print("NETCONF session connected")
 
         # To save time, only capture 3 switchports. Less specific filters
         # will return more information, but take longer to process/transport.
-        # Challenge to viewers: Can you use a loop to build the interface list?
         nc_filter = """
             <interfaces xmlns="http://openconfig.net/yang/interfaces">
                 <interface>
@@ -50,9 +56,14 @@ def main():
         # Execute a "get-config" RPC using the filter defined above
         resp = conn.get_config(source="running", filter=("subtree", nc_filter))
 
-        # Parse the XML into a Python dictionary
+        # Uncomment line below to see raw RPC XML reply; great for learning
+        # print(resp.xml)
+
+        # Parse the XML text into a Python dictionary
         jresp = xmltodict.parse(resp.xml)
-        # import json; print(json.dumps(jresp, indent=2))
+
+        # Uncomment line below to see parsed JSON RPC; great for learning
+        # import json; print(json.dumps(jresp, indent=4))
 
         # Iterate over all the interfaces returned by get-config
         for intf in jresp["rpc-reply"]["data"]["interfaces"]["interface"]:
@@ -73,14 +84,21 @@ def main():
             else:
                 print(f"(no additional data)")
 
-        # Make a change to the access VLAN on a single port
+        # Define the VLAN and interface to be updated
         # Challenge for viewers: enhance it to take a collections of VLANs
         # instead of just one at a time!
         intf = "eth1/71"
         vlan = 518
+
+        # Perform the update, and if success, print a message
         config_resp = update_vlan(conn, intf, vlan)
         if config_resp.ok:
             print(f"{intf} VLAN updated to {vlan}")
+
+            # Save config, and if success, print a message
+            save_resp = save_config_nxos(conn)
+            if save_resp.ok:
+                print("Successfully saved config")
 
     print("NETCONF session disconnected")
 
@@ -122,6 +140,21 @@ def update_vlan(conn, intf_name, vlan_id):
     xpayload = xmltodict.unparse(config_dict)
     config_resp = conn.edit_config(target="running", config=xpayload)
     return config_resp
+
+
+def save_config_nxos(conn):
+    """
+    Save config on Cisco NX-OS is complex and requires a custom RPC.
+    Reference the NX-OS programmability documentation for further details.
+    """
+
+    save_rpc = """
+        <copy_running_config_src xmlns="http://cisco.com/ns/yang/cisco-nx-os-device">
+             <startup-config/>
+        </copy_running_config_src>
+    """
+    save_resp = conn.dispatch(fromstring(save_rpc))
+    return save_resp
 
 
 if __name__ == "__main__":
