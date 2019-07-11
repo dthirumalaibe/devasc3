@@ -1,4 +1,4 @@
-m4/interfaces.py
+m4/yang/interfaces.py
 **.pyc
 m5/public
 m5/yang
