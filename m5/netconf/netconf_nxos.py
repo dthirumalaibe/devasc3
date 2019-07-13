@@ -138,7 +138,21 @@ def update_vlan(conn, intf_name, vlan_id):
     # issue an edit-config RPC to the NX-OS device. Return the
     # rpc-reply so that the caller can take action on the result.
     xpayload = xmltodict.unparse(config_dict)
-    config_resp = conn.edit_config(target="running", config=xpayload)
+
+    # Secure a "lock" to prevent other NETCONF clients from configuring
+    # the system concurrently. The lock is released automatically after
+    # the "with" context ends.
+    with conn.locked("candidate"):
+
+        # We could change the "running" datastore directly, but using
+        # the "candidate" option gives us the option to discard changes
+        config_resp = conn.edit_config(target="candidate", config=xpayload)
+        # conn.discard_changes()
+
+        # We need to "commit" from "candidate" to "running" config, an
+        # intermediate step not needed if we editted "running" directly.
+        conn.commit()
+
     return config_resp
 
 
