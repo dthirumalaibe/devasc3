@@ -8,6 +8,7 @@ VLANs on a Cisco NX-OS switch via the always-on Cisco DevNet sandbox.
 
 
 import xmltodict
+import yaml
 from lxml.etree import fromstring
 from ncclient import manager
 from ncclient.operations import RaiseMode
@@ -40,6 +41,8 @@ def main():
 
         # To save time, only capture 3 switchports. Less specific filters
         # will return more information, but take longer to process/transport.
+        # Note: In this sandbox, it can take ~30 seconds to get all interfaces
+        # and several minutes to get the whole config, so be aware!
         nc_filter = """
             <interfaces xmlns="http://openconfig.net/yang/interfaces">
                 <interface>
@@ -85,59 +88,42 @@ def main():
             else:
                 print(f"(no additional data)")
 
-        # Define the VLAN and interface to be updated
-        # Challenge for viewers: enhance it to take a collections of VLANs
-        # instead of just one at a time!
-        intf = "eth1/73"
-        vlan = 333
-        trunk = True
-
         # Perform the update, and if success, print a message
-        config_resp = update_vlan(conn, intf, vlan, trunk)
-        if config_resp.ok:
-            print(f"{intf} VLAN updated to {vlan}")
+        config_resp = update_intf(conn, "intf_state.yml")
 
-            # Save config, and if success, print a message
-            save_resp = save_config_nxos(conn)
-
-            if save_resp.ok:
-                print("Successfully saved config")
+        # If config and save operations succeed, print "saved" message
+        if config_resp.ok and save_config_nxos(conn).ok:
+            print("Successfully saved running-config to startup-config")
 
     print("NETCONF session disconnected")
 
 
-def update_vlan(conn, intf_name, vlan_id, trunk=False):
+def update_intf(conn, filename):
     """
-    Updates an existing switchport with a new VLAN ID. Expects that the
+    Updates switchports with new config based on YAML file. Expects that the
     NETCONF connection is already open and that all data is valid. Feel
     free to add more data validation here as a challenge.
     """
 
-    # Prepare the arguments. If trunk is true, then we will change the port
-    # type to be a trunk and update the native-vlan. Otherwise, its an access
-    # port and we will update the access-vlan.
-    if trunk:
-        intf_mode = "TRUNK"
-        vlan_type = "native-vlan"
-    else:
-        intf_mode = "ACCESS"
-        vlan_type = "access-vlan"
+    with open(filename, "r") as handle:
+        intfs_to_update = []
+        intf_state = yaml.safe_load(handle)
+        for name, config in intf_state["intf"].items():
 
-    # NETCONF edit-config RPC payload which defines interface to update.
-    # This follows the YANG model we picked apart in the get-config section.
-    intf_to_update = {
-        "name": intf_name,
-        "ethernet": {
-            "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
-            "switched-vlan": {
-                "@xmlns": "http://openconfig.net/yang/vlan",
-                "config": {
-                    vlan_type: str(vlan_id),
-                    "interface-mode": intf_mode,
-                },
-            },
-        },
-    }
+            # NETCONF edit-config RPC payload which defines interface to update.
+            # This follows the YANG model we explored in the get-config section.
+            intfs_to_update.append(
+                {
+                    "name": name,
+                    "ethernet": {
+                        "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+                        "switched-vlan": {
+                            "@xmlns": "http://openconfig.net/yang/vlan",
+                            "config": config,
+                        },
+                    },
+                }
+            )
 
     # Assemble correct payload structure containing interface list, along
     # with any other items to be updated
@@ -145,19 +131,17 @@ def update_vlan(conn, intf_name, vlan_id, trunk=False):
         "config": {  # also "data"
             "interfaces": {
                 "@xmlns": "http://openconfig.net/yang/interfaces",
-                "interface": [intf_to_update],
+                "interface": intfs_to_update,
             }
         }
     }
 
-    # Assemble the XML payload by "unparsing" the JSON dict, then
-    # issue an edit-config RPC to the NX-OS device. Return the
-    # rpc-reply so that the caller can take action on the result.
+    # Assemble the XML payload by "unparsing" the JSON dict (JSON --> XML)
     xpayload = xmltodict.unparse(config_dict)
 
     # Secure a "lock" to prevent other NETCONF clients from configuring
     # the system concurrently. The lock is released automatically after
-    # the "with" context ends.
+    # the "with" context exits.
     with conn.locked("candidate"):
 
         # We could change the "running" datastore directly, but using
@@ -168,18 +152,20 @@ def update_vlan(conn, intf_name, vlan_id, trunk=False):
         conn.raise_mode = RaiseMode.NONE
         config_resp = conn.edit_config(target="candidate", config=xpayload)
         conn.raise_mode = RaiseMode.ALL
+
         if config_resp.ok:
             # We need to "commit" from "candidate" to "running" config, an
             # intermediate step not needed if we editted "running" directly.
+            print("Successfully updated candidate-config")
             conn.commit()
-            print("Changes committed from candidate to running config")
+            print("Changes committed from candidate-config to running-config")
         else:
             # Something went wrong, print the error. In a real environment,
             # there might have been valid configuration applied already,
             # so discarding any pending changes might be a safe approach.
-            print(f"Failed to apply config. Error: {config_resp.error}")
+            print(f"Failed to apply candidate-config --> {config_resp.error}")
             conn.discard_changes()
-            print("Changes discarded")
+            print("Changes discarded from candidate-config")
 
     return config_resp
 
