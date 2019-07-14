@@ -10,6 +10,7 @@ VLANs on a Cisco NX-OS switch via the always-on Cisco DevNet sandbox.
 import xmltodict
 from lxml.etree import fromstring
 from ncclient import manager
+from ncclient.operations import RaiseMode
 
 
 def main():
@@ -87,28 +88,40 @@ def main():
         # Define the VLAN and interface to be updated
         # Challenge for viewers: enhance it to take a collections of VLANs
         # instead of just one at a time!
-        intf = "eth1/71"
-        vlan = 518
+        intf = "eth1/73"
+        vlan = 333
+        trunk = True
 
         # Perform the update, and if success, print a message
-        config_resp = update_vlan(conn, intf, vlan)
+        config_resp = update_vlan(conn, intf, vlan, trunk)
         if config_resp.ok:
             print(f"{intf} VLAN updated to {vlan}")
 
             # Save config, and if success, print a message
             save_resp = save_config_nxos(conn)
+
             if save_resp.ok:
                 print("Successfully saved config")
 
     print("NETCONF session disconnected")
 
 
-def update_vlan(conn, intf_name, vlan_id):
+def update_vlan(conn, intf_name, vlan_id, trunk=False):
     """
     Updates an existing switchport with a new VLAN ID. Expects that the
     NETCONF connection is already open and that all data is valid. Feel
     free to add more data validation here as a challenge.
     """
+
+    # Prepare the arguments. If trunk is true, then we will change the port
+    # type to be a trunk and update the native-vlan. Otherwise, its an access
+    # port and we will update the access-vlan.
+    if trunk:
+        intf_mode = "TRUNK"
+        vlan_type = "native-vlan"
+    else:
+        intf_mode = "ACCESS"
+        vlan_type = "access-vlan"
 
     # NETCONF edit-config RPC payload which defines interface to update.
     # This follows the YANG model we picked apart in the get-config section.
@@ -118,7 +131,10 @@ def update_vlan(conn, intf_name, vlan_id):
             "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
             "switched-vlan": {
                 "@xmlns": "http://openconfig.net/yang/vlan",
-                "config": {"access-vlan": str(vlan_id)},
+                "config": {
+                    vlan_type: str(vlan_id),
+                    "interface-mode": intf_mode,
+                },
             },
         },
     }
@@ -145,13 +161,25 @@ def update_vlan(conn, intf_name, vlan_id):
     with conn.locked("candidate"):
 
         # We could change the "running" datastore directly, but using
-        # the "candidate" option gives us the option to discard changes
+        # the "candidate" option gives us the option to discard changes.
+        # By changing the RaiseMode to NONE, we tell ncclient not to raise
+        # errors, but instead to pass along the rpc-error. We change it
+        # back to ALL after this RPC call so future RPCs will raise errors.
+        conn.raise_mode = RaiseMode.NONE
         config_resp = conn.edit_config(target="candidate", config=xpayload)
-        # conn.discard_changes()
-
-        # We need to "commit" from "candidate" to "running" config, an
-        # intermediate step not needed if we editted "running" directly.
-        conn.commit()
+        conn.raise_mode = RaiseMode.ALL
+        if config_resp.ok:
+            # We need to "commit" from "candidate" to "running" config, an
+            # intermediate step not needed if we editted "running" directly.
+            conn.commit()
+            print("Changes committed from candidate to running config")
+        else:
+            # Something went wrong, print the error. In a real environment,
+            # there might have been valid configuration applied already,
+            # so discarding any pending changes might be a safe approach.
+            print(f"Failed to apply config. Error: {config_resp.error}")
+            conn.discard_changes()
+            print("Changes discarded")
 
     return config_resp
 
