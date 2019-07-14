@@ -142,7 +142,7 @@ def update_intf(conn, filename):
     # Secure a "lock" to prevent other NETCONF clients from configuring
     # the system concurrently. The lock is released automatically after
     # the "with" context exits.
-    with conn.locked("candidate"):
+    with conn.locked(target="candidate"):
 
         # We could change the "running" datastore directly, but using
         # the "candidate" option gives us the option to discard changes.
@@ -151,19 +151,22 @@ def update_intf(conn, filename):
         # back to ALL after this RPC call so future RPCs will raise errors.
         conn.raise_mode = RaiseMode.NONE
         config_resp = conn.edit_config(target="candidate", config=xpayload)
+        val_resp = conn.validate(source="candidate")
         conn.raise_mode = RaiseMode.ALL
 
-        if config_resp.ok:
+        if config_resp.ok and val_resp.ok:
             # We need to "commit" from "candidate" to "running" config, an
             # intermediate step not needed if we editted "running" directly.
             print("Successfully updated candidate-config")
             conn.commit()
             print("Changes committed from candidate-config to running-config")
         else:
-            # Something went wrong, print the error. In a real environment,
+            # Something went wrong, print any errors. In a real environment,
             # there might have been valid configuration applied already,
             # so discarding any pending changes might be a safe approach.
-            print(f"Failed to apply candidate-config --> {config_resp.error}")
+            print("Failed to apply candidate-config")
+            print(f" RPC edit-config() error: --> {config_resp.error}")
+            print(f" RPC validate() error:    --> {val_resp.error}")
             conn.discard_changes()
             print("Changes discarded from candidate-config")
 
