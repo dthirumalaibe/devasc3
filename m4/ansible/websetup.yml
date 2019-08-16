@@ -1,6 +1,6 @@
 ---
 - name: "PLAY 1: Manage web servers"
-  hosts: web
+  hosts: "web"
   become: true
   tasks:
     - name: "TASK 1: Update hostname"
@@ -9,8 +9,8 @@
 
     - name: "TASK 2: Install httpd"
       yum:
-        name: httpd
-        state: latest
+        name: "httpd"
+        state: "latest"
 
     - name: "TASK 3: Update HTML h1 header"
       lineinfile:
@@ -20,26 +20,12 @@
 
     - name: "TASK 4: Start httpd"
       service:
-        name: httpd
-        state: started
+        name: "httpd"
+        state: "started"
 
     - name: "TASK 5: Add webadmin user"
       user:
         name: "{{ web_user }}"
         password: "{{ web_pass }}"
-        shell: /bin/bash
-
-    - name: "TASK 6: Allow SSH password auth"
-      lineinfile:
-        path: "/etc/ssh/sshd_config"
-        line: "PasswordAuthentication yes"
-        regexp: "PasswordAuthentication .*"
-      notify: restart_sshd
-
-  handlers:
-    - name: "HANDLER 1: Restart sshd after config change"
-      listen: restart_sshd
-      service:
-        name: sshd
-        state: restarted
+        shell: "/bin/bash"
 ...
