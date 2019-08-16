@@ -55,7 +55,7 @@ module interfaces {
 
     // Virtual interfaces, such as switched virtual interfaces
     // (SVIs), tunnels, and loopbacks that may exist on a switch.
-    // They dont' have VLANs but optionally may have an IP address.
+    // They don't have VLANs but optionally may have an IP address.
     list virtual-list {
       description "List of virtual interfaces";
 

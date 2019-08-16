@@ -41,7 +41,7 @@ def main():
     lb0.enabled = True
     lb0.ip_address = "192.0.2.1"
 
-    # Add Loopback1, but leave all default config in place
+    # Add Loopback1, but leave all default values in place
     lb1 = ints.interface_container.virtual_list.add("Loopback1")
 
     # Print JSON representation of the current config
