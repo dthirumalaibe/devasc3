@@ -6,7 +6,7 @@ hostname "$1"
 echo "TASK 2: Install httpd"
 yum install -y httpd
 
-echo" TASK 3: Update HTML h1 header (CLI arg)"
+echo "TASK 3: Update HTML h1 header (CLI arg)"
 sed -i "s:<h1>.*</h1>:<h1>$1</h1>:g" \
   /usr/share/httpd/noindex/index.html
 

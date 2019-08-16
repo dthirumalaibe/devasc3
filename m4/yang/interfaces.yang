@@ -1,5 +1,5 @@
 module interfaces {
-  yang-version "1";
+  yang-version "1.1";
   namespace "https://yang.globomantics.com/interfaces";
   prefix "interfaces";
 
@@ -55,8 +55,7 @@ module interfaces {
 
     // Virtual interfaces, such as switched virtual interfaces
     // (SVIs), tunnels, and loopbacks that may exist on a switch.
-    // They wouldn't have VLANs but optionally may have an IP
-    // address.
+    // They dont' have VLANs but optionally may have an IP address.
     list virtual-list {
       description "List of virtual interfaces";
 
