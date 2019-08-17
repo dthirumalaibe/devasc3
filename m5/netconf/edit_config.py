@@ -67,7 +67,7 @@ def update_intf(conn, filename):
                 {
                     "name": name,
                     "ethernet": {
-                        "@xmlns":"http://openconfig.net/yang/interfaces/ethernet",
+                        "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
                         "switched-vlan": {
                             "@xmlns": "http://openconfig.net/yang/vlan",
                             "config": config,
