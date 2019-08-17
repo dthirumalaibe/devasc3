@@ -1,4 +1,3 @@
-
 module: openconfig-vlan
   augment /oc-if:interfaces/oc-if:interface/oc-if:subinterfaces/oc-if:subinterface:
     +--rw vlan

@@ -1,4 +1,3 @@
-
 module: openconfig-if-ethernet
   augment /oc-if:interfaces/oc-if:interface:
     +--rw ethernet

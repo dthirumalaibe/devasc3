@@ -29,7 +29,7 @@
                     </config>
                     <switched-vlan xmlns="http://openconfig.net/yang/vlan">
                         <config>
-                            <access-vlan>518</access-vlan>
+                            <access-vlan>1</access-vlan>
                             <interface-mode>ACCESS</interface-mode>
                             <native-vlan>1</native-vlan>
                         </config>
@@ -64,8 +64,8 @@
                     <switched-vlan xmlns="http://openconfig.net/yang/vlan">
                         <config>
                             <access-vlan>1</access-vlan>
-                            <interface-mode>TRUNK</interface-mode>
-                            <native-vlan>42</native-vlan>
+                            <interface-mode>ACCESS</interface-mode>
+                            <native-vlan>1</native-vlan>
                         </config>
                     </switched-vlan>
                 </ethernet>
