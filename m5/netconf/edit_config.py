@@ -40,7 +40,7 @@ def main():
         print("NETCONF session connected")
 
         # Perform the update, and if success, print a message
-        config_resp = update_intf(conn, "intf_state.yml")
+        config_resp = update_intf(conn, "config_state.yml")
 
         # If config and save operations succeed, print "saved" message
         if config_resp.ok and save_config_nxos(conn).ok:
@@ -58,8 +58,8 @@ def update_intf(conn, filename):
 
     with open(filename, "r") as handle:
         intfs_to_update = []
-        intf_state = yaml.safe_load(handle)
-        for name, config in intf_state["intf"].items():
+        config_state = yaml.safe_load(handle)
+        for name, config in config_state["intf"].items():
 
             # NETCONF edit-config RPC payload which defines interface to update.
             # This follows the YANG model we explored in the get-config section.
@@ -67,7 +67,7 @@ def update_intf(conn, filename):
                 {
                     "name": name,
                     "ethernet": {
-                        "@xmlns": "http://openconfig.net/yang/interfaces/ethernet",
+                        "@xmlns":"http://openconfig.net/yang/interfaces/ethernet",
                         "switched-vlan": {
                             "@xmlns": "http://openconfig.net/yang/vlan",
                             "config": config,
