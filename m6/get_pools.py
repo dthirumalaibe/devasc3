@@ -27,7 +27,7 @@ def main():
 
     # Create 2-tuple for "basic" authentication using Cisco DevNet credentials.
     # No fancy tokens needed to get basic RESTCONF working on Cisco IOS-XE.
-    auth = ("root", "D_Vay!_10&")
+    auth = ("developer", "C1sco12345")
 
     # Define headers for issuing HTTP GET requests to receive YANG data as JSON.
     get_headers = {"Accept": "application/yang-data+json"}
@@ -52,7 +52,7 @@ def main():
         dhcp_pools = get_dhcp_response.json()["Cisco-IOS-XE-dhcp:pool"]
 
         for pool in dhcp_pools:
-            net = pool['network']['primary-network']
+            net = pool["network"]["primary-network"]
             print(f"ID: {pool['id']}")
             print(f"  Domain: {pool['domain-name']}")
             print(f"  Network: {net['number']}")

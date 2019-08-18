@@ -28,11 +28,10 @@ def main():
 
     # Create 2-tuple for "basic" authentication using Cisco DevNet credentials.
     # No fancy tokens needed to get basic RESTCONF working on Cisco IOS-XE.
-    auth = ("root", "D_Vay!_10&")
+    auth = ("developer", "C1sco12345")
 
     # Read YAML declarative state with list of DHCP pools to add
     with open("config_state.yml", "r") as handle:
-    #with open("data_ref/initial_state.yml", "r") as handle:
         config_state = yaml.safe_load(handle)
 
     # Create JSON structure to add a new pool along with the HTTP POST
@@ -72,6 +71,7 @@ def main():
             verify=False,
         )
 
+        # Optionally print the JSON response, along with success message
         # import json; print(json.dumps(post_save_response.json(), indent=2))
         if post_save_response.ok:
             print("Saved configuration")

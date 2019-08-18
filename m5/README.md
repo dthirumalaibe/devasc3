@@ -6,7 +6,7 @@ the switchports in scope should be configured.
 
 ## Scripts
 The `make_trees.sh` script leverages `pyang` to build tree representations
-of the YANG models relevant for the course.
+of the YANG models relevant for the module.
 
 ## Data References
 The `data_ref/` directory contains the following reference data:
