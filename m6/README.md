@@ -9,7 +9,7 @@ of the YANG models relevant for the course.
 ## Demo prep
 For this demo, the following DHCP pool is already configured on
 the sandbox, which can be added using the `add_pools.py` script or
-manually via CLI.
+manually via CLI. See `data_ref/initial_state.yml` for details.
 ```
 ip dhcp pool GLOBOMANTICS_VLAN10
  network 192.0.2.0 255.255.255.0

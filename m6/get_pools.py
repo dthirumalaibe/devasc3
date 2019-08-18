@@ -42,7 +42,7 @@ def main():
     )
 
     # Uncomment the line below to see the JSON response; great for learning
-    # import json; print(json.dumps(get_dhcp_response.json(), indent=2))
+    import json; print(json.dumps(get_dhcp_response.json(), indent=2))
 
     # If the request succeed with a 200 "OK" message and there is
     # some text defined, then step through the JSON and extract the useful

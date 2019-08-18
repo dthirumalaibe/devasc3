@@ -36,7 +36,7 @@ def main():
 
     # Create JSON structure to add a new pool along with the HTTP POST
     # headers needed to add it.
-    add_pools = {"Cisco-IOS-XE-dhcp:pool": config_state}
+    add_pools = {"Cisco-IOS-XE-dhcp:pool": config_state["add_pools"]}
     post_headers = {
         "Content-Type": "application/yang-data+json",
         "Accept": "application/yang-data+json, application/yang-data.errors+json",
@@ -54,14 +54,13 @@ def main():
     )
 
     # Uncomment the line below to see the JSON response; great for learning
-    # import json; print(json.dumps(post_dhcp_response.json(), indent=2))
+    import json; print(json.dumps(post_dhcp_response.json(), indent=2))
 
     # HTTP 201 means "created", implying a new resource was added. The
     # response will tell us the URL of the newly-created resource, simplifying
     # future removal.
     if post_dhcp_response.status_code == 201:
         print(f"Added DHCP pool at: {post_dhcp_response.headers['Location']}")
-        # import json; print(json.dumps(add_pool, indent=2))
 
         # Save configuration whenever the DHCP pool is added. This ensures
         # the configuration will persist across reboots.
@@ -71,6 +70,7 @@ def main():
             auth=auth,
             verify=False,
         )
+        import json; print(json.dumps(post_save_response.json(), indent=2))
         if post_save_response.ok:
             print("Saved configuration")
 
