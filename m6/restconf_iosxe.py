@@ -16,8 +16,8 @@ def main():
     Execution begins here.
     """
 
-    # The IOS-XE sandbox uses a self-signed cert at present, so let's ignore any
-    # obvious security warnings for now.
+    # The IOS-XE sandbox uses a self-signed cert at present, so let's
+    # ignore any obvious security warnings for now.
     requests.packages.urllib3.disable_warnings()
 
     # The API path below is what the DevNet sandbox uses for API testing,
@@ -31,7 +31,7 @@ def main():
     dhcp_target = "data/Cisco-IOS-XE-native:native/ip/dhcp"
 
     # Create 2-tuple for "basic" authentication using Cisco DevNet credentials.
-    # No fancy tokens necessary to get basic RESTCONF working on Cisco IOS-XE!
+    # No fancy tokens needed to get basic RESTCONF working on Cisco IOS-XE.
     auth = ("root", "D_Vay!_10&")
 
     # Define headers for issuing HTTP GET requests to receive YANG data as JSON.
@@ -47,7 +47,7 @@ def main():
     )
 
     # Uncomment the line below to see the JSON response; great for learning
-    print(json.dumps(get_dhcp_response.json(), indent=4))
+    print(json.dumps(get_dhcp_response.json(), indent=2))
 
     # If the request succeed with a 200 "OK" message and there is
     # some text defined, then step through the JSON and extract the useful
@@ -113,7 +113,7 @@ def main():
     # future removal.
     if post_dhcp_response.status_code == 201:
         print(f"Added DHCP pool at: {post_dhcp_response.headers['Location']}")
-        print(json.dumps(add_pool, indent=4))
+        print(json.dumps(add_pool, indent=2))
 
         # Save configuration whenever the DHCP pool is added. This ensures
         # the configuration will persist across reboots.

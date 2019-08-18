@@ -1,4 +1,3 @@
-
 module: Cisco-IOS-XE-dhcp
   augment /ios:native/ios:ip/ios:dhcp:
     +--rw aaa
@@ -198,6 +197,10 @@ module: Cisco-IOS-XE-dhcp
        |        |  +--rw GigabitEthernet?             string
        |        +--:(FiveGigabitEthernet)
        |        |  +--rw FiveGigabitEthernet?         string
+       |        +--:(AppGigabitEthernet)
+       |        |  +--rw AppGigabitEthernet?          string
+       |        +--:(TwentyFiveGigabitEthernet)
+       |        |  o--rw TwentyFiveGigabitEthernet?   string
        |        +--:(TwentyFiveGigE)
        |        |  +--rw TwentyFiveGigE?              string
        |        +--:(TwoGigabitEthernet)
@@ -230,6 +233,8 @@ module: Cisco-IOS-XE-dhcp
        |        |  +--rw SM?                          string
        |        +--:(Cellular)
        |        |  +--rw Cellular?                    string
+       |        +--:(Dialer)
+       |        |  +--rw Dialer?                      string
        |        +--:(Serial)
        |        |  +--rw Serial?                      string
        |        +--:(TenGigabitEthernet)
@@ -245,7 +250,9 @@ module: Cisco-IOS-XE-dhcp
        |        +--:(vasileft)
        |        |  +--rw vasileft?                    uint16
        |        +--:(vasiright)
-       |           +--rw vasiright?                   uint16
+       |        |  +--rw vasiright?                   uint16
+       |        +--:(BD-VIF)
+       |           +--rw BD-VIF?                      string
        +--rw link-address* [address]
        |  +--rw address    ios-types:ipv6-prefix
        +--rw bootfile-url?   string
