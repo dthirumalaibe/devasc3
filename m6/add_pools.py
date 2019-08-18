@@ -24,7 +24,7 @@ def main():
     # which may change in the future. Be sure to check the IP address as
     # I suspect this changes frequently. See here for more details:
     # https://developer.cisco.com/site/ios-xe
-    api_path = "https://ios-xe-mgmt.cisco.com:9443/restconf"
+    api_path = "https://ios-xe-mgmt-latest.cisco.com:9443/restconf"
 
     # Create 2-tuple for "basic" authentication using Cisco DevNet credentials.
     # No fancy tokens needed to get basic RESTCONF working on Cisco IOS-XE.
@@ -32,6 +32,7 @@ def main():
 
     # Read YAML declarative state with list of DHCP pools to add
     with open("config_state.yml", "r") as handle:
+    #with open("data_ref/initial_state.yml", "r") as handle:
         config_state = yaml.safe_load(handle)
 
     # Create JSON structure to add a new pool along with the HTTP POST
@@ -41,6 +42,9 @@ def main():
         "Content-Type": "application/yang-data+json",
         "Accept": "application/yang-data+json, application/yang-data.errors+json",
     }
+
+    # Can double-check our HTTP body using this debug; great for learning
+    # import json; print(json.dumps(add_pools, indent=2))
 
     # Issue HTTP POST request to a similar URL used for the GET request,
     # except carrying the new DHCP pool in the HTTP body. Also, we don't need
@@ -52,9 +56,6 @@ def main():
         json=add_pools,
         verify=False,
     )
-
-    # Uncomment the line below to see the JSON response; great for learning
-    import json; print(json.dumps(post_dhcp_response.json(), indent=2))
 
     # HTTP 201 means "created", implying a new resource was added. The
     # response will tell us the URL of the newly-created resource, simplifying
@@ -70,7 +71,8 @@ def main():
             auth=auth,
             verify=False,
         )
-        import json; print(json.dumps(post_save_response.json(), indent=2))
+
+        # import json; print(json.dumps(post_save_response.json(), indent=2))
         if post_save_response.ok:
             print("Saved configuration")
 
