@@ -11,6 +11,7 @@ of the YANG models relevant for the module.
 For this demo, the following DHCP pool is already configured on
 the sandbox, which can be added using the `add_pools.py` script or
 manually via CLI. See `data_ref/initial_state.yml` for details.
+
 ```
 ip dhcp pool GLOBOMANTICS_VLAN10
  network 192.0.2.0 255.255.255.0
@@ -21,7 +22,8 @@ ip dhcp pool GLOBOMANTICS_VLAN10
 
 ## Data References
 The `data_ref/` directory contains the following reference data:
-  * Raw XML RPC-reply payload from `get-config`
-  * Parsed JSON RPC-reply payload from `get-config`
+  * Quick start initialization state file to add the first
+    DHCP pool for the demo (copy into `config_state.yml`)
+  * Parsed JSON HTTP response bodies from various requests
   * `pyang` text tree representation of the relevant
-    OpenConfig models used in this module
+    Cisco "native" models used in this module

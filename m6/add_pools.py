@@ -48,7 +48,7 @@ def main():
     # Issue HTTP POST request to a similar URL used for the GET request,
     # except carrying the new DHCP pool in the HTTP body. Also, we don't need
     # to specify "/pool" since the dictionary key in the body carries it.
-    post_dhcp_response = requests.post(
+    add_pools_resp = requests.post(
         f"{api_path}/data/Cisco-IOS-XE-native:native/ip/dhcp",
         headers=post_headers,
         auth=auth,
@@ -59,12 +59,12 @@ def main():
     # HTTP 201 means "created", implying a new resource was added. The
     # response will tell us the URL of the newly-created resource, simplifying
     # future removal.
-    if post_dhcp_response.status_code == 201:
-        print(f"Added DHCP pool at: {post_dhcp_response.headers['Location']}")
+    if add_pools_resp.status_code == 201:
+        print(f"Added DHCP pool at: {add_pools_resp.headers['Location']}")
 
         # Save configuration whenever the DHCP pool is added. This ensures
         # the configuration will persist across reboots.
-        post_save_response = requests.post(
+        save_config_resp = requests.post(
             f"{api_path}/operations/cisco-ia:save-config",
             headers=post_headers,
             auth=auth,
@@ -72,8 +72,8 @@ def main():
         )
 
         # Optionally print the JSON response, along with success message
-        # import json; print(json.dumps(post_save_response.json(), indent=2))
-        if post_save_response.ok:
+        # import json; print(json.dumps(save_config_resp.json(), indent=2))
+        if save_config_resp.ok:
             print("Saved configuration")
 
 
