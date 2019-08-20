@@ -83,7 +83,7 @@ def main():
             elif mode == "trunk":
                 print(f"Native VLAN: {config['native-vlan']}")
             else:
-                print(f"(no additional data)")
+                print("(no additional data)")
 
     print("NETCONF session disconnected")
 

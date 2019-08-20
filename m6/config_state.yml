@@ -2,7 +2,7 @@
 # Just defining one pool to keep it simple. CLI equivalent:
 # ip dhcp pool GLOBOMANTICS_VLAN20
 #  network 198.51.100.0 255.255.255.0
-#  default-router 192.51.100.254
+#  default-router 198.51.100.254
 #  dns-server 8.8.8.8 8.8.4.4
 #  domain-name globomantics.com
 add_pools:
