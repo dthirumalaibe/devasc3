@@ -1,0 +1,38 @@
+---
+testbed:
+  name: "globomantics_testbed"
+  credentials:
+    default:
+      username: pyats
+      password: pyats
+
+devices:
+  CSR1:  # case sensitive, must match device hostname
+    os: iosxe
+    type: CSR1000v
+    connections:
+      default:
+        protocol: ssh
+        ip: "172.31.35.72"
+
+  CSR2:  # case sensitive, must match device hostname
+    os: iosxe
+    type: CSR1000v
+    connections:
+      default:
+        protocol: ssh
+        ip: "172.31.45.151"
+
+topology:
+  CSR1:
+    interfaces:
+      GigabitEthernet1:
+        type: ethernet
+        link: BUILTIN
+
+  # CSR2:
+    # interfaces:
+      # Tunnel12:
+        # type: tunnel
+        # link: R1R2
+        # ipv4: "10.1.2.2/24"
