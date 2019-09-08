@@ -32,7 +32,9 @@ class NetworkTestcase(aetest.Testcase):
         """
         Test case asserts that all OSPF neighbors are up. Issues the
         'show ip ospf neighbor' command and parses the output into structured
-        data for easy access/assertions.
+        data for easy access/assertions. We could write more detailed test
+        cases which validate individual neighbor parameters, but this example
+        is designed to be minimal.
         """
 
         # Loop over each device and check OSPF neighbors
@@ -46,5 +48,9 @@ class NetworkTestcase(aetest.Testcase):
 
 
 if __name__ == "__main__":
+    # Genie is a superset of pyATS, so we can use Genie to initialize the
+    # testbed. This gives us access to Genie parsers.
     testbed = Genie.init("testbed.yml")
+
+    # We can run the pyATS test suite by passing in our testbed object.
     aetest.main(testbed=testbed)
